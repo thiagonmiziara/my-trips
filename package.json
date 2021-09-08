@@ -22,6 +22,8 @@
   },
   "dependencies": {
     "@styled-icons/evaicons-outline": "^10.34.0",
+    "graphql": "^15.5.3",
+    "graphql-request": "^3.5.0",
     "leaflet": "^1.7.1",
     "next": "11.0.1",
     "next-pwa": "^5.2.23",
@@ -53,7 +55,7 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.1",
-    "jest": "^27.0.6",
+    "jest": "^27.1.1",
     "jest-styled-components": "^7.0.5",
     "lint-staged": "^11.0.1",
     "plop": "^2.7.4",
