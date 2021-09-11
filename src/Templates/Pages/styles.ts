@@ -13,12 +13,15 @@ export const Content = styled.section`
 
 export const Heading = styled.h1`
   font-size: var(--large);
+  color: var(--highlight);
   margin-bottom: var(--large);
 `
 export const Body = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   p {
     font-size: var(--medium);
     line-height: var(--medium);
-    color: var(--highlight);
   }
 `
