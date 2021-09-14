@@ -20,7 +20,7 @@ export const Body = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  p {
+  > div {
     font-size: var(--medium);
     line-height: var(--medium);
   }

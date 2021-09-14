@@ -16,3 +16,20 @@ export type Place = {
 export type MapProps = {
   places?: Place[]
 }
+
+type ImageProps = {
+  url: string
+  heigth: number
+  width: number
+}
+
+export type PlaceTemplateProps = {
+  place: {
+    slug: string
+    name: string
+    description: {
+      html: string
+    }
+    gallery: ImageProps[]
+  }
+}
