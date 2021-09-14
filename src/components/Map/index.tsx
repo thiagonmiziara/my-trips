@@ -1,19 +1,6 @@
 /* eslint-disable prettier/prettier */
+import { MapProps } from 'models'
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
-
-type Place = {
-  id: string
-  name: string
-  slug: string
-  location: {
-    latitude: number
-    longitude: number
-  }
-}
-
-export type MapProps = {
-  places?: Place[]
-}
 
 const Map = ({ places }: MapProps) => {
   return (
