@@ -1,11 +1,16 @@
+import Image from 'next/image'
 import { CloseOutline } from '@styled-icons/evaicons-outline/CloseOutline'
 
 import LinkWrapper from 'components/LinkWrapper'
 import { PlaceTemplateProps } from 'models'
 
 import * as S from './styles'
+import { useRouter } from 'next/dist/client/router'
 
 export default function PlaceTemplate({ place }: PlaceTemplateProps) {
+  const router = useRouter()
+
+  if (router.isFallback) return null
   return (
     <>
       <LinkWrapper href="/">
@@ -17,14 +22,20 @@ export default function PlaceTemplate({ place }: PlaceTemplateProps) {
           <S.Heading>{place.name}</S.Heading>
 
           <S.Body
-            dangerouslySetInnerHTML={{ __html: place.description.html }}
+            dangerouslySetInnerHTML={{ __html: place.description?.html || ' ' }}
           />
 
           <S.Gallery>
             {place.gallery.map((image, index) => {
               return (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={image.url} alt={place.name} key={`photo-${index}`} />
+                <Image
+                  src={image.url}
+                  alt={place.name}
+                  key={`photo-${index}`}
+                  width={1000}
+                  height={600}
+                  quality={75}
+                />
               )
             })}
           </S.Gallery>
