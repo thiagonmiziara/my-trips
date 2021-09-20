@@ -29,6 +29,7 @@ export type PlaceTemplateProps = {
     name: string
     description?: {
       html: string
+      text: string
     }
     gallery: ImageProps[]
   }
