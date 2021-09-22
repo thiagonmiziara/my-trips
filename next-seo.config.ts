@@ -2,7 +2,7 @@ export default {
   openGraph: {
     type: 'website',
     locale: 'en_Us',
-    url: 'https://my-tryps.thiagomiziara.com.br',
+    url: 'https://my-trips-nine-smoky.vercel.app/',
     site_name: 'My Trips'
   },
   twitter: {
