@@ -1,6 +1,6 @@
 import { useRouter } from 'next/dist/client/router'
 import { MapProps } from 'models'
-import { MapContainer, TileLayer, Marker } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, MapConsumer } from 'react-leaflet'
 
 import * as S from './styles'
 
@@ -36,7 +36,19 @@ const Map = ({ places }: MapProps) => {
           [-180, 180],
           [180, -180]
         ]}
+        // worldCopyJump={true} faz uma cópia do mapa para um movimentação infinita
       >
+        <MapConsumer>
+          {(map) => {
+            const width =
+              window.innerWidth ||
+              document.documentElement.clientWidth ||
+              document.body.clientWidth
+
+            if (width < 768) map.setMinZoom(1)
+            return null
+          }}
+        </MapConsumer>
         <CustomTileLayer />
         {places?.map(({ id, slug, name, location }) => {
           const { latitude, longitude } = location
